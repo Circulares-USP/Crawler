@@ -46,4 +46,6 @@ def plot_buses(states, category=None):
 
         fig.autofmt_xdate()
 
-        plt.show()
+        now = datetime.datetime.now()
+        name = now.strftime(str(category) + '-%Y-%m-%d-%H-%M-%S')
+        plt.savefig('../imgs/' + name + '.png')
