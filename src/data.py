@@ -3,9 +3,9 @@ import datetime
 import time
 from templates.State import State
 
-def data_register(duration_time, x, url):
+def data_register(name, duration_time, x, url):
     """ Dado um tempo duration_time em segundos, registra os dados de estados em um arquivo JSON
-    a cada x segundos """
+    de nome name a cada x segundos """
     
     now = datetime.datetime.now()
     duration = datetime.timedelta(seconds=duration_time)
@@ -13,7 +13,7 @@ def data_register(duration_time, x, url):
     
     while datetime.datetime.now() <= endtime:
         curr_state = State(url)
-        with open('data/states.json', 'a') as f:
+        with open('../data/' + name + '.json', 'a+') as f:
             f.write(curr_state.dump_list() + '\n')
         time.sleep(x)
 
