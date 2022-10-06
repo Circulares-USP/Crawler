@@ -1,6 +1,6 @@
 import pytest
-from templates.State import State
-from templates.Bus import Bus
+from src.templates.State import State
+from src.templates.Bus import Bus
 
 @pytest.mark.parametrize("url, expected", [
     ("", []),

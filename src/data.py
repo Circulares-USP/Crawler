@@ -1,7 +1,7 @@
 import json
 import datetime
 import time
-from templates.State import State
+from src.templates.State import State
 
 def data_register(name, duration_time, x, url):
     """ Dado um tempo duration_time em segundos, registra os dados de estados em um arquivo JSON

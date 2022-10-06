@@ -1,5 +1,5 @@
 import pytest
-from templates.Bus import Bus
+from src.templates.Bus import Bus
 
 @pytest.mark.parametrize("bus_id, bus_line, last_register, position, expected", [
     (None, None, None, None, (None, None, None, None)),
