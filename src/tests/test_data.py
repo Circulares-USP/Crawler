@@ -1,5 +1,40 @@
 import pytest
+import os
+import time
+import datetime
 from src import data
+
+def data_register_mock(name, duration_time, x, url):
+    """ Dado um tempo duration_time em segundos, simula o registro de dados supostamente requisitados
+    a url em um arquivo JSON """
+
+    files_content = {}
+    files_content['../../data/tests/test_register1.json'] = [""]
+    files_content['../../data/tests/test_register2.json'] = ['{"data_register": "2022-09-24T06:52:26Z", "buses": [{"bus_id": "", "bus_line": 0, "last_register": "", "position": [0, 0]}]}']
+    files_content['../../data/tests/test_register3.json'] = ['{"data_register": "2022-09-24T08:37:25Z", "buses": [{"bus_id": "28024", "bus_line": 8012, "last_register": "2022-09-24T00:08:55Z", "position": [-46.739708, -23.568467]}]}', '{"data_register": "2022-09-24T03:50:47Z", "buses": [{"bus_id": "28024", "bus_line": 8012, "last_register": "2022-09-24T00:09:08Z", "position": [-46.714251875, -23.564547250000004]}]}']
+
+    curr_state = {}
+    if name in files_content:
+        curr_state['dump'] = files_content[name]
+
+        with open(name, 'a+') as f:
+            for line in curr_state['dump']: 
+                f.write(line + '\n')
+    else: 
+        data.data_register(name, duration_time, x, url)
+
+@pytest.mark.parametrize("name, duration_time, x, url, expected", [
+    ("../../data/tests/test_register1.json", 1, 1, "https://teste1/", "\n"),
+    ("../../data/tests/test_register2.json", 1, 1, "https://teste2/", '{"data_register": "2022-09-24T06:52:26Z", "buses": [{"bus_id": "", "bus_line": 0, "last_register": "", "position": [0, 0]}]}\n'),
+    ("../../data/tests/test_register3.json", 1, 1, "https://teste3/", '{"data_register": "2022-09-24T08:37:25Z", "buses": [{"bus_id": "28024", "bus_line": 8012, "last_register": "2022-09-24T00:08:55Z", "position": [-46.739708, -23.568467]}]}\n{"data_register": "2022-09-24T03:50:47Z", "buses": [{"bus_id": "28024", "bus_line": 8012, "last_register": "2022-09-24T00:09:08Z", "position": [-46.714251875, -23.564547250000004]}]}\n')
+])
+def test_data_register(name, duration_time, x, url, expected):
+    data.data_register = data_register_mock
+    data.data_register(name, duration_time, x, url)
+    with open(name, 'r') as f:
+        content = f.read()
+        os.remove(name)
+        assert content == expected
 
 @pytest.mark.parametrize("test_file, output", [
     ("../../data/tests/test1.json", []),
