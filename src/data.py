@@ -13,7 +13,7 @@ def data_register(name, duration_time, x, url):
     
     while datetime.datetime.now() <= endtime:
         curr_state = State(url)
-        with open('../data/' + name + '.json', 'a+') as f:
+        with open(name, 'a+') as f:
             f.write(curr_state.dump_list() + '\n')
         time.sleep(x)
 
