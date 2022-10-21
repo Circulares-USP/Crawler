@@ -29,7 +29,7 @@ def amount_buses_per_time(states, line=None):
 
     return (amount, hours)
 
-def plot_buses(states, category=None):   
+def plot_buses(states, imgs_path, category=None):   
     """ Plota os gráficos de dados dos ônibus de acordo com o conjunto de estados da API e a"
     categoria de gráfico correspondente """
     if category == None:
@@ -48,4 +48,4 @@ def plot_buses(states, category=None):
 
         now = datetime.datetime.now()
         name = now.strftime(str(category) + '-%Y-%m-%d-%H-%M-%S')
-        plt.savefig('../imgs/' + name + '.png')
+        plt.savefig(imgs_path + name + '.png')

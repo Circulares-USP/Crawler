@@ -9,8 +9,9 @@ def main():
     else:
         if sys.argv[1] == "plot":
             name_data = sys.argv[2]
+            imgs_path = sys.argv[3]
             estados = data.data_read(name_data)
-            plot.plot_buses(estados)
+            plot.plot_buses(estados, imgs_path)
         elif sys.argv[1] == "crawl":
             name_data = sys.argv[2]
             time = sys.argv[3]
