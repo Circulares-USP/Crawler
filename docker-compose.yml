@@ -29,3 +29,15 @@ services:
     profiles:
       - plot
     command: python3 src/main.py plot ${PLOT_DATA_READ_PATH} ${PLOT_IMG_PATH} ${PLOT_CATEGORY}
+
+  test:
+    build:
+      context: .
+      dockerfile: ./src/Dockerfile
+    working_dir: /circulares/src
+    tty: true
+    volumes:
+      - .:/circulares
+    profiles:
+      - test
+    command: python3 -m pytest tests/
