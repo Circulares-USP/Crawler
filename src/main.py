@@ -10,8 +10,14 @@ def main():
         if sys.argv[1] == "plot":
             name_data = sys.argv[2]
             imgs_path = sys.argv[3]
+
+            if len(sys.argv) < 5:
+                category = None
+            else:
+                category = sys.argv[4]
+
             estados = data.data_read(name_data)
-            plot.plot_buses(estados, imgs_path)
+            plot.plot_buses(estados, imgs_path, category)
         elif sys.argv[1] == "crawl":
             name_data = sys.argv[2]
             time = sys.argv[3]

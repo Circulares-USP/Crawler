@@ -28,4 +28,4 @@ services:
       - .:/circulares
     profiles:
       - plot
-    command: python3 src/main.py plot ${PLOT_DATA_READ_PATH} ${PLOT_IMG_PATH}
+    command: python3 src/main.py plot ${PLOT_DATA_READ_PATH} ${PLOT_IMG_PATH} ${PLOT_CATEGORY}
