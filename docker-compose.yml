@@ -1,9 +1,31 @@
-version: "3.9"
+version: "3"
 
 services:
-  jupyter-notebook:
+  notebook:
     build: .
     ports:
       - 8888:8888
     volumes:
       - .:/circulares
+    profiles:
+      - notebook
+  
+  crawl:
+    build: 
+      context: .
+      dockerfile: ./src/Dockerfile
+    volumes: 
+      - .:/circulares
+    profiles:
+      - crawl
+    command: python3 src/main.py crawl data/data1.json 60 15 https://uspdigital.usp.br/mobile/servicos/sptrans/posicoes
+
+  plot:
+    build:
+      context: .
+      dockerfile: ./src/Dockerfile
+    volumes:
+      - .:/circulares
+    profiles:
+      - plot
+    command: python3 src/main.py plot data/data1.json imgs/
