@@ -1,7 +1,7 @@
 import requests
 import json
 import datetime
-from src.templates.Bus import Bus
+from templates.Bus import Bus
 
 class State:
     def __init__(self, url):
