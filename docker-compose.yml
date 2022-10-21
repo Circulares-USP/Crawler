@@ -18,7 +18,7 @@ services:
       - .:/circulares
     profiles:
       - crawl
-    command: python3 src/main.py crawl data/data1.json 60 15 https://uspdigital.usp.br/mobile/servicos/sptrans/posicoes
+    command: python3 src/main.py crawl ${CRAWL_DATA_SAVE_PATH} ${CRAWL_DURATION_TIME} ${CRAWL_INTERVAL_TIME} ${CRAWL_API_URL}
 
   plot:
     build:
@@ -28,4 +28,4 @@ services:
       - .:/circulares
     profiles:
       - plot
-    command: python3 src/main.py plot data/data1.json imgs/
+    command: python3 src/main.py plot ${PLOT_DATA_READ_PATH} ${PLOT_IMG_PATH}
