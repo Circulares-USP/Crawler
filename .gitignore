@@ -1,6 +1,7 @@
 .env
 .ipynb_checkpoints
 data/mock
+data/disciplinas
 */**/__pycache__
 .pytest_cache
 imgs/
