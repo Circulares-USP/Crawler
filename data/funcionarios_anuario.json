@@ -1,0 +1,106 @@
+[
+  {
+    "unidade": "Faculdade de Arquitetura e Urbanismo",
+    "funcionarios": 129
+  },
+  {
+    "unidade": "Instituto de Física",
+    "funcionarios": 240
+  },
+  {
+    "unidade": "Faculdade de Economia, Administração, Contabilidade e Atuária",
+    "funcionarios": 105
+  },
+  {
+    "unidade": "Faculdade de Filosofia, Letras e Ciências Humanas",
+    "funcionarios": 394
+  },
+  {
+    "unidade": "Museu de Arte Contemporânea",
+    "funcionarios": 48
+  },
+  {
+    "unidade": "Faculdade de Medicina Veterinária e Zootecnia",
+    "funcionarios": 248
+  },
+  {
+    "unidade": "Faculdade de Ciências Farmacêuticas",
+    "funcionarios": 134
+  },
+  {
+    "unidade": "Instituto de Matemática e Estatística",
+    "funcionarios": 98
+  },
+  {
+    "unidade": "Escola de Comunicações e Artes",
+    "funcionarios": 191
+  },
+  {
+    "unidade": "Instituto de Pesquisas Energéticas e Nucleares",
+    "funcionarios": 0
+  },
+  {
+    "unidade": "Faculdade de Odontologia",
+    "funcionarios": 166
+  },
+  {
+    "unidade": "Escola Politécnica",
+    "funcionarios": 654
+  },
+  {
+    "unidade": "Instituto de Relações Internacionais",
+    "funcionarios": 29
+  },
+  {
+    "unidade": "Faculdade de Educação",
+    "funcionarios": 156
+  },
+  {
+    "unidade": "Instituto de Biociências",
+    "funcionarios": 166
+  },
+  {
+    "unidade": "Instituto de Química",
+    "funcionarios": 187
+  },
+  {
+    "unidade": "Instituto de Geociências",
+    "funcionarios": 112
+  },
+  {
+    "unidade": "Instituto de Astronomia, Geofísica e Ciências Atmosféricas",
+    "funcionarios": 153
+  },
+  {
+    "unidade": "Faculdade de Medicina, Instituto de Ciências Biomédicas, Instituto de Química e Instituto de Biociências",
+    "funcionarios": 0
+  },
+  {
+    "unidade": "Instituto de Ciências Biomédicas",
+    "funcionarios": 253
+  },
+  {
+    "unidade": "Hospital Universitário",
+    "funcionarios": 1417
+  },
+  {
+    "unidade": "Instituto de Psicologia",
+    "funcionarios": 118
+  },
+  {
+    "unidade": "Instituto Oceanográfico",
+    "funcionarios": 122
+  },
+  {
+    "unidade": "Reitoria Administração Central",
+    "funcionarios": 1738
+  },
+  {
+    "unidade": "Centro de Práticas Esportivas",
+    "funcionarios": 119
+  },
+  {
+    "unidade": "Superintendência da Tecnologia da Informação",
+    "funcionarios": 228
+  }
+]
